@@ -1,84 +1,86 @@
 # Mário Barman — Website
 
-Site institucional do **Mário Barman** (open bar e coquetelaria para eventos), inspirado em sites de storytelling com rolagem: preloader com um drink sendo servido, hero com slider de drinks, frases em arco, copo que enche com a rolagem, carrossel horizontal de drinks, texto girando em círculo, revelação de palavras e galeria que abre em grade.
+Bilingual (PT-BR / EN) website for **Mário Barman**, an open bar and cocktail service for weddings, sweet fifteen parties and events in Rio de Janeiro and São Paulo states.
+
+The site tells its story through scroll: a preloader that pours a drink, a hero slider with a circular color reveal, phrases travelling along an arc, a glass that fills as you scroll, a horizontal drinks showcase, a rotating text ring, a word-by-word statement reveal and a gallery that zooms out into a grid.
 
 **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · Motion · Lucide Icons
 
 ---
 
-## Como rodar
+## Getting started
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000  → redireciona para /pt-BR ou /en
-npm run build        # build de produção (Vercel / Node)
+npm run dev          # http://localhost:3000 → redirects to /pt-BR or /en
+npm run build        # production build (Vercel / Node)
 npm run start
-npm run build:static # site 100% estático em /out (Hostinger, Netlify, GitHub Pages…)
+npm run build:static # fully static site in /out (Hostinger, Netlify, GitHub Pages…)
 ```
 
-Copie `.env.example` para `.env.local` e ajuste a URL do site.
+Copy `.env.example` to `.env.local` and set the site URL.
 
 ---
 
-## Onde editar cada coisa
+## Where to edit content
 
-| O quê | Arquivo |
+| What | File |
 | --- | --- |
-| **Todos os textos** (PT-BR / EN) | `locales/pt-BR.ts` e `locales/en.ts` |
-| Nome, ano de fundação, regiões, **logo** | `data/site.ts` |
-| WhatsApp, Instagram, e-mail, telefone, outras redes | `data/contacts.ts` |
-| **Drinks** (nome, foto, descrição, ingredientes, categoria) | `data/drinks.ts` |
-| **Depoimentos** | `data/testimonials.ts` |
-| Serviços (também viram opções do formulário) | `data/services.ts` |
-| Fotos da galeria de eventos | `data/gallery.ts` |
-| Hero: foto/vídeo de fundo, slider, decorações | `data/hero.ts` |
-| Foto do Mário (seção Sobre) | `PORTRAIT_SRC` em `components/sections/About.tsx` |
-| Cores, fontes, curvas de animação | `app/globals.css` (bloco `@theme`) |
+| **All copy** (PT-BR / EN) | `locales/pt-BR.ts` and `locales/en.ts` |
+| Name, founding year, service regions, **logo** | `data/site.ts` |
+| WhatsApp, Instagram, email, phone, other socials | `data/contacts.ts` |
+| **Drinks** (name, photo, description, ingredients, category) | `data/drinks.ts` |
+| **Testimonials** | `data/testimonials.ts` |
+| Services (also used as quote form options) | `data/services.ts` |
+| Event gallery photos | `data/gallery.ts` |
+| Hero: background photo/video, slider, decorations | `data/hero.ts` |
+| Founder portrait (About section) | `PORTRAIT_SRC` in `components/sections/About.tsx` |
+| Colors, fonts, easing curves | `app/globals.css` (`@theme` block) |
 
-### Logo oficial
-Salve o arquivo em `public/logos/` (SVG ou PNG com fundo transparente) e preencha `site.logo.src` em `data/site.ts`. O header, o menu e o rodapé passam a usar o arquivo automaticamente. A imagem de referência enviada está em `public/logos/referencia-logo-banner.png`.
+### Official logo
+Save the file in `public/logos/` (SVG or transparent PNG) and set `site.logo.src` in `data/site.ts`. The header, menu and footer switch to it automatically. Until then, a typographic placeholder based on the brand reference (`public/logos/referencia-logo-banner.png`) is used.
 
-### Fotos
-- **Drinks:** PNG com fundo transparente em `public/images/drinks/` → preencha `image` no drink. Sem foto, o site desenha o copo (ilustração vetorial) a partir de `visual`.
-- **Eventos / equipe / depoimentos:** `public/images/events/`, `team/`, `testimonials/` → preencha `src`/`photo` nos arquivos de `data/`.
-- Enquanto não houver foto, aparece uma moldura provisória com a legenda e "Foto em breve".
+### Photos
+- **Drinks:** transparent PNGs in `public/images/drinks/` → set `image` on the drink. Without a photo, the site draws the glass as a vector illustration from `visual`.
+- **Events / team / testimonials:** `public/images/events/`, `team/`, `testimonials/` → set `src` / `photo` in the `data/` files.
+- Until a photo is set, a placeholder frame with its caption and "Photo coming soon" is shown.
 
-### Placeholders
-Drinks e depoimentos estão marcados com `placeholder: true` (mostram o selo "Exemplo"). Ao inserir conteúdo real, remova essa linha. Nenhum depoimento é real.
+### Placeholder content
+Demo drinks and testimonials are flagged with `placeholder: true` (they show a "Sample" badge). Remove the flag when adding real content. None of the testimonials are real.
 
 ---
 
-## Formulário de orçamento
+## Quote form
 
-Padrão: ao enviar, o site valida os campos e **abre o WhatsApp do Mário com a mensagem pronta** (nome, contato, tipo de evento, data, local, convidados, serviços e mensagem). Drinks escolhidos em "Incluir no orçamento" entram na mensagem.
+By default the form validates every field and **opens WhatsApp with a ready-to-send message** (name, contact, event type, date, venue, guests, services and notes). Drinks added through "Add to my quote" are included in the message.
 
-Para enviar para um backend/serviço (Formspree, Make, API própria), em `.env.local`:
+To send requests to a backend or form service (Formspree, Make, your own API), set in `.env.local`:
 
 ```
 NEXT_PUBLIC_QUOTE_PROVIDER=api
-NEXT_PUBLIC_QUOTE_ENDPOINT=https://seu-endpoint
+NEXT_PUBLIC_QUOTE_ENDPOINT=https://your-endpoint
 ```
 
-Os dados são enviados em JSON via `POST` (veja `lib/quote/quote.ts`). Campos e regras de validação: `lib/quote/config.ts` e `validateQuote`.
+Data is sent as JSON via `POST` (see `lib/quote/quote.ts`). Fields and validation rules live in `lib/quote/config.ts` and `validateQuote`.
 
 ---
 
-## Idiomas
+## Internationalization
 
-- Rotas: `/pt-BR` e `/en` (geradas estaticamente). `/` redireciona conforme a escolha anterior do visitante ou o idioma do navegador.
-- O seletor PT / EN troca o idioma mantendo a posição na página.
-- Para um novo idioma: adicione em `lib/i18n/config.ts`, crie `locales/<código>.ts` com a mesma estrutura e registre em `lib/i18n/dictionaries.ts`. Os dados de `data/` usam o formato `{ "pt-BR": "...", en: "..." }`.
+- Routes: `/pt-BR` and `/en`, statically generated. `/` redirects based on the visitor's previous choice or browser language.
+- The PT / EN switcher changes language while keeping the scroll position.
+- To add a language: register it in `lib/i18n/config.ts`, create `locales/<code>.ts` with the same structure and add it to `lib/i18n/dictionaries.ts`. Files in `data/` use the `{ "pt-BR": "...", en: "..." }` format.
 
 ---
 
-## Estrutura
+## Project structure
 
 ```
 app/
-  [locale]/layout.tsx   fontes, metadados (SEO), provedores
-  [locale]/page.tsx     composição da página + JSON-LD
-  (root)/page.tsx       redireciona "/" para o idioma
-  robots.ts, sitemap.ts, icon.svg, fonts/
+  [locale]/layout.tsx   fonts, SEO metadata, providers
+  [locale]/page.tsx     page composition + JSON-LD
+  (root)/page.tsx       redirects "/" to a language
+  icon.svg, fonts/
 components/
   layout/    Header, MenuOverlay, LanguageSwitcher, Preloader, Footer, FloatingWhatsApp
   sections/  Hero, Marquee, Manifesto, About, Testimonials, FirstSip,
@@ -89,13 +91,19 @@ components/
 lib/         i18n/, quote/, hooks, motion, whatsapp
 locales/     pt-BR.ts, en.ts
 data/        site, contacts, drinks, testimonials, services, gallery, hero
+scripts/     generate-seo.mjs (robots.txt + sitemap.xml), build-static.mjs
 public/      images/, logos/
 ```
 
-## Acessibilidade e desempenho
+## Accessibility and performance
 
-- Com "reduzir movimento" ativado no sistema, o preloader é pulado e as cenas presas à rolagem viram layouts estáticos.
-- Navegação por teclado com foco visível, link "Pular para o conteúdo", menu com foco preso e `Esc`, diálogo nativo (`<dialog>`) para os drinks.
-- Animações usam apenas `transform`/`opacity` ligados a motion values (sem re-render a cada frame).
-- Fontes locais (Cinzel + Jost, licença OFL em `app/fonts/`), sem requisições externas.
-- Uso de álcool: o rodapé traz o aviso "Aprecie com moderação / proibido para menores de 18 anos".
+- With "reduce motion" enabled, the preloader is skipped and scroll-pinned scenes become static layouts.
+- Keyboard navigation with visible focus, a skip-to-content link, a focus-trapped menu that closes with `Esc`, and a native `<dialog>` for drink details.
+- Animations only touch `transform` / `opacity` through motion values (no re-render per frame).
+- Self-hosted fonts (Cinzel + Jost, OFL licenses in `app/fonts/`), no external requests.
+- Responsible drinking notice in the footer ("Please drink responsibly / no alcohol sales under 18").
+
+## Credits
+
+- Tab icon: cocktail icon by barurezeki from [the Noun Project](https://thenounproject.com) (CC BY 3.0).
+- Fonts: [Cinzel](https://fonts.google.com/specimen/Cinzel) and [Jost](https://fonts.google.com/specimen/Jost), SIL Open Font License.
