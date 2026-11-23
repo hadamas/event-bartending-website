@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Mário Barman — tokens de design
+   ébano (balcão à luz de velas) · latão (frisos e logotipo)
+   champanhe (áreas claras) · espuma (texto sobre escuro)
+   ------------------------------------------------------------------ */
+@theme {
+  --color-ink: #0b0907;
+  --color-smoke: #16120e;
+  --color-smoke-2: #211b15;
+  --color-smoke-3: #2e261e;
+  --color-foam: #f5eee1;
+  --color-champagne: #e9dcc2;
+  --color-champagne-2: #dccaa6;
+  --color-champagne-3: #cdb98f;
+  --color-brass: #c2a063;
+  --color-brass-deep: #6e5326;
+  --color-amber: #c8752a;
+
+  --font-display: var(--font-cinzel), "Times New Roman", serif;
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-pour: cubic-bezier(0.22, 0.8, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 48s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+@utility container-x {
+  width: 100%;
+  max-width: 92rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+/* Textura de grão sutil (fotografia analógica / ambiente de bar). */
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-foam);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--color-brass);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  input,
+  select,
+  textarea {
+    color-scheme: dark;
+  }
+
+  dialog::backdrop {
+    background: rgb(11 9 7 / 0.78);
+    backdrop-filter: blur(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Preloader: aparece só na primeira visita da sessão.
+   O script no <head> adiciona .intro-seen antes da primeira pintura
+   quando o visitante já viu a introdução ou prefere menos movimento.
+   ------------------------------------------------------------------ */
+.preloader {
+  animation: preloader-failsafe 0s linear 7s forwards;
+}
+html.intro-seen .preloader {
+  display: none;
+}
+@keyframes preloader-failsafe {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Diálogo de detalhes do drink */
+.drink-dialog[open] {
+  animation: dialog-in 0.6s var(--ease-out-expo);
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+}
+
+/* Contorno de texto (títulos "fantasma") */
+.text-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
