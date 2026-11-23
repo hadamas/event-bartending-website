@@ -16,7 +16,7 @@ export const quoteConfig = {
   endpoint: process.env.NEXT_PUBLIC_QUOTE_ENDPOINT ?? "",
 };
 
-export const eventTypes = ["wedding", "fifteen", "corporate", "birthday", "other"] as const;
+export const eventTypes = ["wedding", "fifteen", "events", "birthday", "other"] as const;
 export type EventType = (typeof eventTypes)[number];
 
 export interface QuoteData {

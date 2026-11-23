@@ -12,8 +12,8 @@ import { cn } from "@/lib/cn";
 import { MediaPlaceholder } from "@/components/ui/MediaPlaceholder";
 import { RevealText } from "@/components/ui/RevealText";
 
-/** Foto do Mário: salve em /public/images/team e preencha aqui. */
-const PORTRAIT_SRC: string | undefined = undefined; // ex.: "/images/team/mario.jpg"
+/** Foto do Mário em: /public/images/team/mario.jpg */
+const PORTRAIT_SRC: string | undefined = "/images/team/mario.jpg"
 
 const PILLAR_STYLES = [
   "bg-ink text-champagne -rotate-2",

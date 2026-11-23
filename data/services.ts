@@ -36,11 +36,11 @@ export const services: Service[] = [
     },
   },
   {
-    id: "corporate",
-    title: { "pt-BR": "Bar para empresas", en: "Corporate bar service" },
+    id: "events",
+    title: { "pt-BR": "Bar para eventos", en: "Events bar service" },
     description: {
-      "pt-BR": "Atendimento para confraternizações, lançamentos e eventos corporativos.",
-      en: "Service for company gatherings, launches and corporate events.",
+      "pt-BR": "Atendimento para confraternizações, lançamentos e eventos.",
+      en: "Service for company gatherings, launches and gen events.",
     },
   },
 ];

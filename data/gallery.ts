@@ -24,6 +24,6 @@ export const gallery: GalleryItem[] = [
   { id: "g5", alt: { "pt-BR": "Mário servindo um drink", en: "Mário serving a drink" }, tone: "#3b2410", glass: "rocks" },
   { id: "g6", alt: { "pt-BR": "Detalhes da decoração do bar", en: "Bar decoration details" }, tone: "#2a2016", glass: "balloon" },
   { id: "g7", alt: { "pt-BR": "Festa de 15 anos", en: "Sweet fifteen party" }, tone: "#35172a", glass: "coupe" },
-  { id: "g8", alt: { "pt-BR": "Evento corporativo", en: "Corporate event" }, tone: "#1c1f24", glass: "rocks" },
+  { id: "g8", alt: { "pt-BR": "Eventos", en: "Events" }, tone: "#1c1f24", glass: "rocks" },
   { id: "g9", alt: { "pt-BR": "Drinks servidos à beira-mar", en: "Drinks served by the sea" }, tone: "#13262a", glass: "balloon" },
 ];

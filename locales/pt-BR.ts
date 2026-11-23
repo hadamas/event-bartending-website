@@ -8,7 +8,7 @@ export const ptBR = {
   meta: {
     title: "Mário Barman | Open bar e coquetelaria para eventos",
     description:
-      "Serviço de bar e coquetelaria para casamentos, festas de 15 anos e eventos corporativos em Angra dos Reis, Rio de Janeiro, São Paulo, Paraty e regiões. Desde 2022.",
+      "Serviço de bar e coquetelaria para casamentos, festas de 15 anos e eventos em Angra dos Reis, Rio de Janeiro, São Paulo, Paraty e regiões. Desde 2022.",
     keywords: [
       "open bar",
       "bartender para eventos",
@@ -61,7 +61,7 @@ export const ptBR = {
     eyebrow: "Open bar desde 2022",
     headline: ["Mais que drinks,", "uma experiência."],
     subheadline:
-      "Serviço de bar e coquetelaria para casamentos, festas de 15 anos e eventos corporativos em Angra dos Reis, Rio, São Paulo, Paraty e regiões.",
+      "Serviço de bar e coquetelaria para casamentos, festas de 15 anos e eventos em Angra dos Reis, Rio, São Paulo, Paraty e regiões.",
     primaryCta: "Solicitar orçamento",
     secondaryCta: "Conhecer nossos drinks",
     featuredLabel: "Em destaque",
@@ -76,7 +76,7 @@ export const ptBR = {
   marquee: [
     "Casamentos",
     "Festas de 15 anos",
-    "Eventos corporativos",
+    "Eventos",
     "Angra dos Reis",
     "Rio de Janeiro",
     "São Paulo",
@@ -113,7 +113,7 @@ export const ptBR = {
     facts: [
       { term: "Desde 2022", detail: "Servindo open bar e coquetelaria em eventos." },
       { term: "Onde atendemos", detail: "{regions} {andRegions}." },
-      { term: "Para quais eventos", detail: "Casamentos, festas de 15 anos e eventos corporativos." },
+      { term: "Para quais eventos", detail: "Casamentos, festas de 15 anos e eventos." },
     ],
   },
 
@@ -207,7 +207,7 @@ export const ptBR = {
         options: {
           wedding: "Casamento",
           fifteen: "Festa de 15 anos",
-          corporate: "Evento corporativo",
+          events: "Eventos",
           birthday: "Aniversário",
           other: "Outro",
         },

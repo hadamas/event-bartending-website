@@ -41,7 +41,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "cliente-3",
     name: "Nome do cliente",
-    context: { "pt-BR": "Evento corporativo", en: "Corporate event" },
+    context: { "pt-BR": "Eventos", en: "Events" },
     quote: placeholderQuote,
     placeholder: true,
   },

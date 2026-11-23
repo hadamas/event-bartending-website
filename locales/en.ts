@@ -8,7 +8,7 @@ export const en: Dictionary = {
   meta: {
     title: "Mário Barman | Open bar & cocktail service for events",
     description:
-      "Bar and cocktail service for weddings, sweet fifteen parties and corporate events in Angra dos Reis, Rio de Janeiro, São Paulo, Paraty and nearby. Since 2022.",
+      "Bar and cocktail service for weddings, sweet fifteen parties and events in Angra dos Reis, Rio de Janeiro, São Paulo, Paraty and nearby. Since 2022.",
     keywords: [
       "open bar",
       "event bartender",
@@ -61,7 +61,7 @@ export const en: Dictionary = {
     eyebrow: "Open bar since 2022",
     headline: ["More than drinks,", "an experience."],
     subheadline:
-      "Bar and cocktail service for weddings, sweet fifteen parties and corporate events in Angra dos Reis, Rio, São Paulo, Paraty and nearby.",
+      "Bar and cocktail service for weddings, sweet fifteen parties and events in Angra dos Reis, Rio, São Paulo, Paraty and nearby.",
     primaryCta: "Request a quote",
     secondaryCta: "Explore our drinks",
     featuredLabel: "Featured",
@@ -76,7 +76,7 @@ export const en: Dictionary = {
   marquee: [
     "Weddings",
     "Sweet fifteen parties",
-    "Corporate events",
+    "Events",
     "Angra dos Reis",
     "Rio de Janeiro",
     "São Paulo",
@@ -103,7 +103,7 @@ export const en: Dictionary = {
   about: {
     heading: "The art of serving well",
     paragraphs: [
-      "Since 2022, Mário Barman has brought open bar and cocktail service to weddings, sweet fifteen parties and corporate events in Angra dos Reis, Rio de Janeiro, São Paulo, Paraty and nearby.",
+      "Since 2022, Mário Barman has brought open bar and cocktail service to weddings, sweet fifteen parties and events in Angra dos Reis, Rio de Janeiro, São Paulo, Paraty and nearby.",
       "Space reserved for the brand's story: how it all began, Mário's path behind the bar and what drives the team at every event.",
       "Every event gets a menu designed for its guests, a carefully set bar and a team that serves with attention to every detail.",
     ],
@@ -113,7 +113,7 @@ export const en: Dictionary = {
     facts: [
       { term: "Since 2022", detail: "Serving open bar and cocktails at events." },
       { term: "Where we serve", detail: "{regions} {andRegions}." },
-      { term: "Which events", detail: "Weddings, sweet fifteen parties and corporate events." },
+      { term: "Which events", detail: "Weddings, sweet fifteen parties and events." },
     ],
   },
 
@@ -207,7 +207,7 @@ export const en: Dictionary = {
         options: {
           wedding: "Wedding",
           fifteen: "Sweet fifteen party",
-          corporate: "Corporate event",
+          events: "Events",
           birthday: "Birthday",
           other: "Other",
         },
