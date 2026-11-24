@@ -92,11 +92,12 @@ export const en: Dictionary = {
     ],
     cta: "Read our story",
     photos: [
-      "Photo of the bar setup",
-      "Photo of drink preparation",
-      "Photo of guests toasting",
-      "Close-up photo of a drink",
-      "Photo of the team",
+      "Bar set up with a bartender and fresh fruit on the counter",
+      "Bartenders mixing drinks under a thatched-roof bar",
+      "Guests toasting with drinks",
+      "Orange-garnished drink served next to a bottle of sparkling wine",
+      "Bartending team at a waterfront bar",
+      "Bride at the bar during the party",
     ],
   },
 

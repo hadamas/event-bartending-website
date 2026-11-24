@@ -28,13 +28,13 @@ const PHOTOS: Array<{
   label: number;
   src?: string;
 }> = [
-  { className: "left-[5%] top-[9%] w-[30vw] aspect-[4/5] sm:w-[22vw] lg:w-[14vw]", from: 10, to: -55, tone: "#3a2312", glass: "rocks", label: 0 },
-  { className: "right-[6%] top-[4%] hidden aspect-square sm:block sm:w-[18vw] lg:w-[12vw]", from: 30, to: -95, tone: "#2b1d16", glass: "martini", label: 1 },
-  { className: "right-[3%] top-[58%] hidden aspect-[4/5] sm:block sm:w-[24vw] lg:w-[15vw]", from: 40, to: -70, tone: "#331717", glass: "coupe", label: 2 },
-  { className: "left-[8%] top-[70%] hidden aspect-[5/4] sm:block sm:w-[22vw] lg:w-[14vw]", from: 55, to: -85, tone: "#1f2219", glass: "highball", label: 3 },
-  { className: "left-[56%] top-[86%] hidden aspect-[4/5] lg:block lg:w-[11vw]", from: 60, to: -120, tone: "#2a2016", glass: "balloon", label: 4 },
+  { className: "left-[5%] top-[9%] w-[30vw] aspect-[4/5] sm:w-[22vw] lg:w-[14vw]", from: 10, to: -55, tone: "#3a2312", glass: "rocks", label: 0, src: "/images/craft-hospitality/bar.jpg" },
+  { className: "right-[6%] top-[4%] hidden aspect-square sm:block sm:w-[18vw] lg:w-[12vw]", from: 30, to: -95, tone: "#2b1d16", glass: "martini", label: 1, src: "/images/craft-hospitality/drinks-prepare.jpg" },
+  { className: "right-[3%] top-[58%] hidden aspect-[4/5] sm:block sm:w-[24vw] lg:w-[15vw]", from: 40, to: -70, tone: "#331717", glass: "coupe", label: 2, src: "/images/craft-hospitality/toast.jpg" },
+  { className: "left-[8%] top-[70%] hidden aspect-[5/4] sm:block sm:w-[22vw] lg:w-[14vw]", from: 55, to: -85, tone: "#1f2219", glass: "highball", label: 4, src: "/images/craft-hospitality/team.jpg" },
+  { className: "left-[56%] top-[86%] hidden aspect-[4/5] lg:block lg:w-[11vw]", from: 60, to: -120, tone: "#2a2016", glass: "balloon", label: 3, src: "/images/craft-hospitality/drink2.jpg" },
   // somente no celular: sobe pela lateral sem cruzar o texto
-  { className: "right-[6%] top-[56%] w-[24vw] aspect-[4/5] sm:hidden", from: 8, to: -4, tone: "#331717", glass: "coupe", label: 2 },
+  { className: "right-[6%] top-[56%] w-[24vw] aspect-[4/5] sm:hidden", from: 8, to: -4, tone: "#331717", glass: "coupe", label: 5, src: "/images/craft-hospitality/wedding.jpg" },
 ];
 
 export function Manifesto() {

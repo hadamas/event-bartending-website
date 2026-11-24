@@ -92,11 +92,12 @@ export const ptBR = {
     ],
     cta: "Conheça a nossa história",
     photos: [
-      "Foto do bar montado",
-      "Foto do preparo",
-      "Foto de convidados brindando",
-      "Foto de detalhe do drink",
-      "Foto da equipe",
+      "Bar montado com bartender e frutas no balcão",
+      "Bartenders preparando drinks sob um quiosque de palha",
+      "Convidadas brindando com drinks",
+      "Drink com laranja servido ao lado de uma garrafa de espumante",
+      "Equipe de bartenders em um bar à beira-mar",
+      "Noiva no bar durante a festa",
     ],
   },
 
